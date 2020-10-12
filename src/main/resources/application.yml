@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: iDashboard-alm-collector
+  data:
+    mongodb:
+      #uri: mongodb://root:password@localhost:27017/iDashboard_Sep2020_Collector
+      uri: mongodb://localhost/alm-collectors
+
+logging:
+  level:
+    com.cognizant.collector.alm.client.AlmClient: OFF
+
+  pattern:
+    console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n'
+
+scheduler:
+  cron: 0 0/1 * * * *
+  enable: true
+
+almServer:
+  url: "http://ec2-52-38-244-81.us-west-2.compute.amazonaws.com:8080/qcbin"
+  username: "138497"
+  password: "password-1"
+
+server :
+  port: 8089

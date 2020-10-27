@@ -34,6 +34,8 @@ dependencies {
     compile 'io.github.openfeign:feign-jackson'
     compile 'io.github.openfeign:feign-okhttp'
 
+    compile group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '3.0.3'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 

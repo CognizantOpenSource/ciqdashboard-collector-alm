@@ -3,8 +3,8 @@ spring:
     name: iDashboard-alm-collector
   data:
     mongodb:
-      #uri: mongodb://root:password@localhost:27017/iDashboard_Sep2020_Collector
-      uri: mongodb://localhost/alm-collectors
+      uri: mongodb://idashboard:${spring.data.mongodb.credents}@10.120.100.231/idashboard
+      credents: ENC(rwQEK1M5vbHwwhhqx6pBDHn4Ut4IrKHbBUsrB0AUR8XHc8GN/Sf4IRVma96OWroe)
 
 logging:
   level:
@@ -20,7 +20,12 @@ scheduler:
 almServer:
   url: "http://ec2-52-38-244-81.us-west-2.compute.amazonaws.com:8080/qcbin"
   username: "138497"
-  password: "password-1"
+  password: ENC(gRskr1KvZGIR8vx7WfxJx4WGS+LgKNoWNOIoAGnC3y5GQJrx/aWzi4NfU1vZX+PJ)
 
 server :
   port: 8089
+
+jasypt:
+  encryptor:
+    algorithm: PBEWITHHMACSHA512ANDAES_256
+    password: LeapSecurityKey

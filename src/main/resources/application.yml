@@ -4,7 +4,7 @@ spring:
   data:
     mongodb:
       uri: mongodb://idashboard:${spring.data.mongodb.credents}@10.120.100.231/idashboard
-      credents: ENC(rwQEK1M5vbHwwhhqx6pBDHn4Ut4IrKHbBUsrB0AUR8XHc8GN/Sf4IRVma96OWroe)
+      credents: ENC(1rf2YUrEDfwjvGf7h5+Azqx/rkH0XJpU0uQfyhMBrYA5IbcPe8EurMMkAAX/CGNN)
 
 logging:
   level:

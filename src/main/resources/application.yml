@@ -4,7 +4,7 @@ spring:
   data:
     mongodb:
       uri: mongodb://idashboard:${spring.data.mongodb.credents}@10.120.100.231/idashboard
-      credents: ENC(1rf2YUrEDfwjvGf7h5+Azqx/rkH0XJpU0uQfyhMBrYA5IbcPe8EurMMkAAX/CGNN)
+      credents: ENC(4litQ6Gs+nMxT88Dxa5hy8/peZ3m46Va/aeFy2vHw/PFqoBDhVseIETBNKgPnimJ)
 
 logging:
   level:
@@ -20,12 +20,12 @@ scheduler:
 almServer:
   url: "http://ec2-52-38-244-81.us-west-2.compute.amazonaws.com:8080/qcbin"
   username: "138497"
-  password: ENC(gRskr1KvZGIR8vx7WfxJx4WGS+LgKNoWNOIoAGnC3y5GQJrx/aWzi4NfU1vZX+PJ)
+  password: "password-1"
 
-server :
+server:
   port: 8089
 
 jasypt:
   encryptor:
-    algorithm: PBEWITHHMACSHA512ANDAES_256
-    password: LeapSecurityKey
+    password: dndCMiFLdGR5dktqJnY0dQ==
+    bean: JasyptEncryptorBean

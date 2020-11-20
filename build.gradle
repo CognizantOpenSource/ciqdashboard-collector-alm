@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.cognizant.leap.data.collector'
+group = 'com.cognizant.idashboard.data.collector'
 version = '0.0.1-SNAPSHOT'
 description = 'alm'
 sourceCompatibility = '11'

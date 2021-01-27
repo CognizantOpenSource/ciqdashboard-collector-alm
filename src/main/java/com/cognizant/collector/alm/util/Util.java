@@ -9,6 +9,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeParseException;
+import java.time.zone.ZoneRulesException;
 import java.util.Date;
 @Slf4j
 public class Util {
@@ -47,7 +49,10 @@ public class Util {
                 if (strDate.contains(" ")) strDate = strDate.replace(" ", "T");
                 return Date.from(LocalDateTime.parse(strDate).atZone(ZoneId.systemDefault()).toInstant());
             }
-        } catch (Exception e) {
+        } catch (DateTimeParseException e) {
+            log.error("Error while parsing");
+        }
+        catch (ZoneRulesException e){
             log.error("Error while parsing");
         }
         return null;
@@ -56,7 +61,7 @@ public class Util {
     public static LocalTime getTimeFromString(String strTime) {
         try {
             return LocalTime.parse(strTime);
-        } catch (Exception e) {
+        } catch (DateTimeParseException e) {
             log.error("Error while parsing");
         }
         return null;

@@ -17,8 +17,6 @@ public class AlmComponent {
     @Autowired
     AlmAuthComponent authComponent;
     @Autowired
-    CommonUtilComponent commonUtilComponent;
-    @Autowired
     AlmProjectComponent projectComponent;
 
 

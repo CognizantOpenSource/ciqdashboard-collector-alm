@@ -39,8 +39,7 @@ class ClientTest {
         String domainName = "IDASHBOARD";
         String projectName = "iDashboard_final";
         ALMTestDetails tests = almClient.getTests(authComponent.getCookies(), domainName, projectName, new HashMap<>());
-        System.out.println(tests);
-        Assertions.assertNotNull(almClient);
+        Assertions.assertNotNull(tests);
     }
 
     @org.junit.jupiter.api.Test
@@ -49,8 +48,7 @@ class ClientTest {
         String domainName = "IDASHBOARD";
         String projectName = "iDashboard_final";
         ALMTestRunDetails runs = almClient.getRuns(authComponent.getCookies(), domainName, projectName, new HashMap<>());
-        System.out.println(runs);
-        Assertions.assertNotNull(almClient);
+        Assertions.assertNotNull(runs);
     }
 
     @org.junit.jupiter.api.Test
@@ -59,15 +57,13 @@ class ClientTest {
         String domainName = "IDASHBOARD";
         String projectName = "iDashboard_final";
         ALMDefectDetails defects = almClient.getDefects(authComponent.getCookies(), domainName, projectName, new HashMap<>());
-        System.out.println(defects);
-        Assertions.assertNotNull(almClient);
+        Assertions.assertNotNull(defects);
     }
 
     @Test
     void getCycleDetails() {
         Optional<Cycle> optional = cycleRepository.findByProjectNameAndCycleId("DEFAULT", "1001");
-        System.out.println(optional);
-        Assertions.assertNotNull(cycleRepository);
+        Assertions.assertNotNull(optional);
     }
 
     @Test
@@ -76,8 +72,7 @@ class ClientTest {
         String domainName = "IDASHBOARD";
         String projectName = "iDashboard_final";
         ALMCycleDetails requirements = almClient.getCycles(authComponent.getCookies(), domainName, projectName, new HashMap<>());
-        System.out.println();
-        Assertions.assertNotNull(almClient);
+        Assertions.assertNotNull(requirements);
     }
 
     @org.junit.jupiter.api.Test
@@ -86,8 +81,7 @@ class ClientTest {
         String domainName = "IDASHBOARD_DUMMY";
         String projectName = "dummy_proj_1";
         ALMRequirementDetails requirements = almClient.getRequirements(authComponent.getCookies(), domainName, projectName, new HashMap<>());
-        System.out.println();
-        Assertions.assertNotNull(almClient);
+        Assertions.assertNotNull(requirements);
     }
 
     @org.junit.jupiter.api.Test
@@ -96,8 +90,7 @@ class ClientTest {
         String domainName = "IDASHBOARD_DUMMY";
         String projectName = "dummy_proj_3";
         ALMRequirementTypeDetails typeDetails = almClient.getRequirementTypes(authComponent.getCookies(), domainName, projectName);
-        System.out.println("");
-        Assertions.assertNotNull(almClient);
+        Assertions.assertNotNull(typeDetails);
     }
 
     @org.junit.jupiter.api.Test
@@ -106,8 +99,7 @@ class ClientTest {
         String domainName = "IDASHBOARD_DUMMY";
         String projectName = "dummy_proj_3";
         ALMReleaseDetails releaseDetails = almClient.getReleases(authComponent.getCookies(), domainName, projectName, new HashMap<>());
-        System.out.println("");
-        Assertions.assertNotNull(almClient);
+        Assertions.assertNotNull(releaseDetails);
     }
 
     @org.junit.jupiter.api.Test
@@ -119,14 +111,12 @@ class ClientTest {
             System.out.println(projects);
             authComponent.refreshALM();
         });
-        System.out.println("");
         Assertions.assertNotNull(almClient);
     }
 
     @org.junit.jupiter.api.Test
     void clientTest() {
         component.updateAlmDetails();
-        System.out.println("");
         Assertions.assertNotNull(component);
     }
 }

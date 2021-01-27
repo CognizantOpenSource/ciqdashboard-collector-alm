@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 
 @Data
-@Document("source_alm_cycle")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmCycleCollectionName()}")
 @CompoundIndex(name = "proj_cyc_index",
         def = "{'projectName': 1, 'cycleId': 1}",
         unique = true)

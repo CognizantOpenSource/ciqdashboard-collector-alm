@@ -2,6 +2,7 @@ package com.cognizant.collector.alm.util;
 
 import com.cognizant.collector.alm.beans.cycle.Cycle;
 import com.cognizant.collector.alm.beans.release.Release;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
-
+@Slf4j
 public class Util {
     private Util() {
     }
@@ -47,7 +48,7 @@ public class Util {
                 return Date.from(LocalDateTime.parse(strDate).atZone(ZoneId.systemDefault()).toInstant());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Error while parsing");
         }
         return null;
     }
@@ -56,7 +57,7 @@ public class Util {
         try {
             return LocalTime.parse(strTime);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Error while parsing");
         }
         return null;
     }

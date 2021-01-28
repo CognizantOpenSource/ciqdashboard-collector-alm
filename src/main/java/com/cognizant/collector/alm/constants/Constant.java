@@ -26,6 +26,8 @@ public class Constant {
     public static final String QUERY_AND = "&";
     public static final String QUERY = "query";
 
+    public static final String SOURCE = "source_alm_";
+
     private Constant() {
     }
 }

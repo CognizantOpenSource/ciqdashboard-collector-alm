@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 
 @Data
-@Document("source_alm_defect")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmDefectCollectionName()}")
 @CompoundIndex(name = "proj_def_index",
         def = "{'projectName': 1, 'defectId': 1}",
         unique = true)

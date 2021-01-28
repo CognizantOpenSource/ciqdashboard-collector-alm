@@ -9,7 +9,7 @@ import java.time.LocalTime;
 import java.util.Date;
 
 @Data
-@Document("source_alm_runs")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmRunCollectionName()}")
 @CompoundIndex(name = "proj_run_index",
         def = "{'projectName': 1, 'testRunId': 1}",
         unique = true)

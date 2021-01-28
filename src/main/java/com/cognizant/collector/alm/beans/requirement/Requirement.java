@@ -10,7 +10,7 @@ import java.time.LocalTime;
 import java.util.Date;
 
 @Data
-@Document("source_alm_requirement")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmRequirementCollectionName()}")
 @CompoundIndex(name = "proj_req_index",
         def = "{'projectName': 1, 'requirementId': 1}",
         unique = true)

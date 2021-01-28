@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 
 @Data
-@Document("source_alm_releases")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmReleaseCollectionName()}")
 @CompoundIndex(name = "proj_rel_index", def = "{'projectName': 1, 'releaseId': 1}", unique = true)
 public class Release {
     @Id

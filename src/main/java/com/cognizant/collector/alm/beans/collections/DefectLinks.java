@@ -1,6 +1,6 @@
 package com.cognizant.collector.alm.beans.collections;
 
-import lombok.Data;
+/*import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -20,3 +20,4 @@ public class DefectLinks {
     private String id;
     private String secondEndpointType;
 }
+*/

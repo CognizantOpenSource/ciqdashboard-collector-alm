@@ -5,6 +5,13 @@ spring:
     mongodb:
       uri: mongodb://idashboard:${spring.data.mongodb.credents}@10.120.100.231/idashboard
       credents: ENC(4litQ6Gs+nMxT88Dxa5hy8/peZ3m46Va/aeFy2vHw/PFqoBDhVseIETBNKgPnimJ)
+      collection:
+        release : release
+        defects : defects
+        test: test
+        runs: runs
+        requirements: requirements
+        cycle: cycle
 
 logging:
   level:

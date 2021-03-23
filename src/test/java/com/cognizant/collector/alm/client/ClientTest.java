@@ -36,8 +36,8 @@ class ClientTest {
     @org.junit.jupiter.api.Test
     void getTests() {
         authComponent.loginALM();
-        String domainName = "IDASHBOARD";
-        String projectName = "iDashboard_final";
+        String domainName = "CIQDASHBOARD";
+        String projectName = "ciqDashboard_final";
         ALMTestDetails tests = almClient.getTests(authComponent.getCookies(), domainName, projectName, new HashMap<>());
         Assertions.assertNotNull(tests);
     }
@@ -45,8 +45,8 @@ class ClientTest {
     @org.junit.jupiter.api.Test
     void getTestRuns() {
         authComponent.loginALM();
-        String domainName = "IDASHBOARD";
-        String projectName = "iDashboard_final";
+        String domainName = "CIQDASHBOARD";
+        String projectName = "ciqDashboard_final";
         ALMTestRunDetails runs = almClient.getRuns(authComponent.getCookies(), domainName, projectName, new HashMap<>());
         Assertions.assertNotNull(runs);
     }
@@ -54,8 +54,8 @@ class ClientTest {
     @org.junit.jupiter.api.Test
     void getDefects() {
         authComponent.loginALM();
-        String domainName = "IDASHBOARD";
-        String projectName = "iDashboard_final";
+        String domainName = "CIQDASHBOARD";
+        String projectName = "ciqDashboard_final";
         ALMDefectDetails defects = almClient.getDefects(authComponent.getCookies(), domainName, projectName, new HashMap<>());
         Assertions.assertNotNull(defects);
     }
@@ -69,8 +69,8 @@ class ClientTest {
     @Test
     void getCycles() {
         authComponent.loginALM();
-        String domainName = "IDASHBOARD";
-        String projectName = "iDashboard_final";
+        String domainName = "CIQDASHBOARD";
+        String projectName = "ciqDashboard_final";
         ALMCycleDetails requirements = almClient.getCycles(authComponent.getCookies(), domainName, projectName, new HashMap<>());
         Assertions.assertNotNull(requirements);
     }
@@ -78,7 +78,7 @@ class ClientTest {
     @org.junit.jupiter.api.Test
     void getRequirements() {
         authComponent.loginALM();
-        String domainName = "IDASHBOARD_DUMMY";
+        String domainName = "CIQDASHBOARD_DUMMY";
         String projectName = "dummy_proj_1";
         ALMRequirementDetails requirements = almClient.getRequirements(authComponent.getCookies(), domainName, projectName, new HashMap<>());
         Assertions.assertNotNull(requirements);
@@ -87,7 +87,7 @@ class ClientTest {
     @org.junit.jupiter.api.Test
     void getRequirementType() {
         authComponent.loginALM();
-        String domainName = "IDASHBOARD_DUMMY";
+        String domainName = "CIQDASHBOARD_DUMMY";
         String projectName = "dummy_proj_3";
         ALMRequirementTypeDetails typeDetails = almClient.getRequirementTypes(authComponent.getCookies(), domainName, projectName);
         Assertions.assertNotNull(typeDetails);
@@ -96,7 +96,7 @@ class ClientTest {
     @org.junit.jupiter.api.Test
     void getReleases() {
         authComponent.loginALM();
-        String domainName = "IDASHBOARD_DUMMY";
+        String domainName = "CIQDASHBOARD_DUMMY";
         String projectName = "dummy_proj_3";
         ALMReleaseDetails releaseDetails = almClient.getReleases(authComponent.getCookies(), domainName, projectName, new HashMap<>());
         Assertions.assertNotNull(releaseDetails);

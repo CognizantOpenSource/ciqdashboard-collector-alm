@@ -30,7 +30,7 @@ import java.util.Date;
  * @author Cognizant
  */
 
-@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmTestCollectionName()}")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmCollectionName()}")
 @CompoundIndex(name = "proj_test_index",
         def = "{'projectName': 1, 'testId': 1}",
         unique = true)
@@ -40,6 +40,7 @@ public class Test {
     private String id;
     private String testId;
     private String testName;
+    private String assetType = "Test";
     private String description;
     private String domainName;
     private String projectName;

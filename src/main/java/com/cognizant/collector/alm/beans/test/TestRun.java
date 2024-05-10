@@ -32,7 +32,7 @@ import java.util.Date;
  */
 
 @Data
-@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmRunCollectionName()}")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmCollectionName()}")
 @CompoundIndex(name = "proj_run_index",
         def = "{'projectName': 1, 'testRunId': 1}",
         unique = true)
@@ -41,6 +41,7 @@ public class TestRun {
     private String id;
     private String testRunId;
     private String testRunName;
+    private String assetType = "Test Run";
     private String domainName;
     private String projectName;
     private long duration;

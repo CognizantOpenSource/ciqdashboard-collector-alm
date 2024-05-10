@@ -33,7 +33,7 @@ import java.util.Date;
  */
 
 @Data
-@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmRequirementCollectionName()}")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmCollectionName()}")
 @CompoundIndex(name = "proj_req_index",
         def = "{'projectName': 1, 'requirementId': 1}",
         unique = true)
@@ -42,6 +42,7 @@ public class Requirement {
     private String id;
     private String requirementId;
     private String requirementName;
+    private String assetType = "Requirement";
     private String description;
     private String attachment;
     private String status;

@@ -30,6 +30,6 @@ import java.util.Optional;
 
 public interface DefectRepository extends MongoRepository<Defect, String> {
     Optional<Defect> findByProjectNameAndDefectId(String projectName, String defectId);
-
+    long deleteByDomainNameAndProjectNameAndDefectId(String domainName, String projectName, String defectId);
     Optional<Defect> findFirstByDomainNameAndProjectNameOrderByLastModifiedDesc(String domainName, String projectName);
 }

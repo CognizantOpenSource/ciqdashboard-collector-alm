@@ -77,8 +77,10 @@ public class AlmTestComponent {
         tests.forEach(test -> {
             test.setDomainName(domainName);
             test.setProjectName(projectName);
+
             Optional<Test> optional = testService.getByProjectNameAndTestId(projectName, test.getTestId());
             optional.ifPresent(run -> test.setId(run.getId()));
+
         });
         return testService.addAll(tests);
     }

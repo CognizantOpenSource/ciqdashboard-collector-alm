@@ -61,4 +61,8 @@ public class TestRunService {
         return optional.isPresent() ? optional.get().getLastModified() : null;
     }
 
+    public long deleteByDomainNameAndProjectNameAndTestRunId(String domainName, String projectName, String testRunId) {
+        return repository.deleteByDomainNameAndProjectNameAndTestRunId(domainName, projectName, testRunId);
+    }
+
 }

@@ -22,9 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.*;
 
 /*
  * AlmAuthComponent
@@ -45,8 +43,10 @@ public class AlmAuthComponent {
         log.info("Signing In");
         Map<String, Collection<String>> headers = almClient.signIn().headers();
 
-        Collection<String> setCookies = headers.get("Set-Cookie");
-        this.setCookies(setCookies.stream().collect(Collectors.joining(";")));
+        List<String> setCookies = new ArrayList<>();
+        headers.get("Set-Cookie").forEach(t -> setCookies.add( t.split(";")[0] ) );
+
+        this.setCookies(String.join(";", setCookies));
         log.info("Cookies Saved !");
     }
 

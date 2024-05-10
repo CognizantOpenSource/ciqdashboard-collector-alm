@@ -31,13 +31,14 @@ import java.util.Date;
  */
 
 @Data
-@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmReleaseCollectionName()}")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmCollectionName()}")
 @CompoundIndex(name = "proj_rel_index", def = "{'projectName': 1, 'releaseId': 1}", unique = true)
 public class Release {
     @Id
     private String id;
     private String releaseId;
     private String releaseName;
+    private String assetType = "Release";
     private String domainId;
     private String domainName;
     private String projectId;

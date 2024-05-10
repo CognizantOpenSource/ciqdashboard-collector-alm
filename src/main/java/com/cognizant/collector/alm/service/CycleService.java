@@ -59,4 +59,8 @@ public class CycleService {
         Optional<Cycle> optional = repository.findFirstByDomainNameAndProjectNameOrderByLastModifiedDesc(domainName, projectName);
         return optional.isPresent() ? optional.get().getLastModified() : null;
     }
+
+    public void deleteAll() {
+        repository.deleteAll();
+    }
 }

@@ -16,13 +16,13 @@
 
 
 plugins {
-    id 'org.springframework.boot' version '2.2.5.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-    id 'java'
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java-library'
 }
 
 group = 'com.cognizant.ciqdashboard.data.collector'
-version = '0.0.1-SNAPSHOT'
+version = '2.0.0'
 description = 'alm'
 sourceCompatibility = '11'
 
@@ -38,27 +38,32 @@ repositories {
 }
 
 ext {
-    set('springCloudVersion', "Hoxton.SR6")
+    set('springCloudVersion', "2021.0.4")
 }
 
 dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-//    implementation 'org.springframework.boot:spring-boot-starter-web:2.3.1.RELEASE'
+    implementation ('org.springframework.cloud:spring-cloud-starter-openfeign:3.1.8'){
+        exclude group: 'org.bouncycastle', module: 'bcpkix-jdk15on'
+    }
+    implementation 'org.yaml:snakeyaml:2.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.3'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.3'
+    implementation 'commons-fileupload:commons-fileupload:1.5'
 
-    compile 'io.github.openfeign:feign-jackson'
-    compile 'io.github.openfeign:feign-okhttp'
+    api 'io.github.openfeign:feign-jackson:12.2'
+    api 'io.github.openfeign:feign-okhttp:12.2'
 
-    compile group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '3.0.3'
+    api group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '3.0.5'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-        exclude group: 'org.json', module: 'json'
     }
     testImplementation 'org.springframework.security:spring-security-test'
 

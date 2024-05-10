@@ -33,4 +33,6 @@ public interface TestRunRepository extends MongoRepository<TestRun, String> {
     Optional<TestRun> findByProjectNameAndTestRunId(String projectName, String testRunId);
 
     Optional<Cycle> findFirstByDomainNameAndProjectNameOrderByLastModifiedDesc(String domainName, String projectName);
+
+    long deleteByDomainNameAndProjectNameAndTestRunId(String domainName, String projectName, String testRunId);
 }

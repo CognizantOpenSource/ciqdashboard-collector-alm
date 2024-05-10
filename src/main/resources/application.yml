@@ -3,36 +3,31 @@ spring:
     name: CIQDashboard-alm-collector
   data:
     mongodb:
-      uri: mongodb://ciqdashboard:${spring.data.mongodb.credents}@10.120.100.231/ciqdashboard
-      credents: ENC(4litQ6Gs+nMxT88Dxa5hy8/peZ3m46Va/aeFy2vHw/PFqoBDhVseIETBNKgPnimJ)
+      uri:
+      credents:
       collection:
-        release : release
-        defects : defects
-        test: test
-        runs: runs
-        requirements: requirements
-        cycle: cycle
+        assets:
 
 logging:
   level:
-    com.cognizant.collector.alm.client.AlmClient: OFF
+    com.cognizant.collector.alm.client.AlmClient:
 
   pattern:
-    console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n'
+    console:
 
 scheduler:
-  cron: 0 0/1 * * * *
-  enable: true
+  cron:
+  enable:
 
 almServer:
-  url: "http://ec2-52-38-244-81.us-west-2.compute.amazonaws.com:8080/qcbin"
-  username: "138497"
-  password: "password-1"
+  url:
+  username:
+  password:
 
 server:
-  port: 8089
+  port:
 
 jasypt:
   encryptor:
-    password: dndCMiFLdGR5dktqJnY0dQ==
-    bean: JasyptEncryptorBean
+    password:
+    bean:

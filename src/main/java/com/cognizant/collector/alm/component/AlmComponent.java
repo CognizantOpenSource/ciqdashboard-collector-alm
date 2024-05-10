@@ -21,6 +21,8 @@ import com.cognizant.collector.alm.beans.domain.ALMDomainDetails;
 import com.cognizant.collector.alm.beans.domain.Domain;
 import com.cognizant.collector.alm.beans.project.ALMProjectDetails;
 import com.cognizant.collector.alm.client.AlmClient;
+import com.cognizant.collector.alm.repository.*;
+import com.cognizant.collector.alm.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -41,14 +43,23 @@ public class AlmComponent {
     AlmAuthComponent authComponent;
     @Autowired
     AlmProjectComponent projectComponent;
-
+    @Autowired
+    ReleaseService releaseService;
+    @Autowired
+    CycleService cycleService;
 
     public void updateAlmDetails() {
         authComponent.loginALM();
+        deleteReleaseAndCycleDocumentsFromDB();
         log.info("Data Retrieval Starts !");
         getALMDetails();
         authComponent.logoutALM();
         log.info("Signed Out");
+    }
+
+    public void deleteReleaseAndCycleDocumentsFromDB() {
+        releaseService.deleteAll();
+        cycleService.deleteAll();
     }
 
     private void getALMDetails() {

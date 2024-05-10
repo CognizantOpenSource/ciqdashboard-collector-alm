@@ -39,65 +39,15 @@ import static com.cognizant.collector.alm.constants.Constant.*;
 @Slf4j
 public class CommonUtilComponent {
 
-    static String almCycleCollectionName;
-    static String almDefectCollectionName;
-    static String almReleaseCollectionName;
-    static String almRequirementCollectionName;
-    static String almTestCollectionName;
-    static String almRunCollectionName;
+    static String almCollectionName;
 
-    public static String getAlmCycleCollectionName() {
-        return almCycleCollectionName;
+    public static String getAlmCollectionName() {
+        return almCollectionName;
     }
 
-    @Value("${spring.data.mongodb.collection.cycle}")
-    public void setAlmCycleCollectionName(String almCycleCollectionName) {
-        CommonUtilComponent.almCycleCollectionName = SOURCE+almCycleCollectionName;
-    }
-
-    public static String getAlmDefectCollectionName() {
-        return almDefectCollectionName;
-    }
-
-    @Value("${spring.data.mongodb.collection.defects}")
-    public void setAlmDefectCollectionName(String almDefectCollectionName) {
-        CommonUtilComponent.almDefectCollectionName = SOURCE+almDefectCollectionName;
-    }
-
-    public static String getAlmReleaseCollectionName() {
-        return almReleaseCollectionName;
-    }
-
-    @Value("${spring.data.mongodb.collection.release}")
-    public void setAlmReleaseCollectionName(String almReleaseCollectionName) {
-        CommonUtilComponent.almReleaseCollectionName = SOURCE+almReleaseCollectionName;
-    }
-
-    public static String getAlmRequirementCollectionName() {
-        return almRequirementCollectionName;
-    }
-
-    @Value("${spring.data.mongodb.collection.requirements}")
-    public void setAlmRequirementCollectionName(String almRequirementCollectionName) {
-        CommonUtilComponent.almRequirementCollectionName = SOURCE+almRequirementCollectionName;
-    }
-
-    public static String getAlmTestCollectionName() {
-        return almTestCollectionName;
-    }
-
-    @Value("${spring.data.mongodb.collection.test}")
-    public void setAlmTestCollectionName(String almTestCollectionName) {
-        CommonUtilComponent.almTestCollectionName = SOURCE+almTestCollectionName;
-    }
-
-    public static String getAlmRunCollectionName() {
-        return almRunCollectionName;
-    }
-
-    @Value("${spring.data.mongodb.collection.runs}")
-    public void setAlmRunCollectionName(String almRunCollectionName) {
-        CommonUtilComponent.almRunCollectionName = SOURCE + almRunCollectionName;
+    @Value("${spring.data.mongodb.collection.assets}")
+    public void setAlmCollectionName(String almCollectionName) {
+        CommonUtilComponent.almCollectionName = SOURCE+almCollectionName;
     }
 
     public String parseDateToString(Date date) {

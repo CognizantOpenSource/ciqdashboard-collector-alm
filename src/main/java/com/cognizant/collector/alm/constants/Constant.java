@@ -23,6 +23,8 @@ package com.cognizant.collector.alm.constants;
  * @author Cognizant
  */
 
+import java.util.*;
+
 public class Constant {
 
     public static final int RESULTS_PER_PAGE = 100;
@@ -50,6 +52,8 @@ public class Constant {
     public static final String QUERY = "query";
 
     public static final String SOURCE = "source_alm_";
+
+    public static final List<String> PARENT_TYPES = List.of("test", "requirement", "defect", "run");
 
     private Constant() {
     }

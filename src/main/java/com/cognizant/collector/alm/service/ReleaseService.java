@@ -58,4 +58,8 @@ public class ReleaseService {
         Optional<Defect> optional = repository.findFirstByDomainNameAndProjectNameOrderByLastModifiedDesc(domainName, projectName);
         return optional.isPresent() ? optional.get().getLastModified() : null;
     }
+
+    public void deleteAll() {
+        repository.deleteAll();
+    }
 }

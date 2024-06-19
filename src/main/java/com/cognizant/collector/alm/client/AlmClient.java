@@ -17,6 +17,7 @@
 
 package com.cognizant.collector.alm.client;
 
+import com.cognizant.collector.alm.beans.audit.*;
 import com.cognizant.collector.alm.beans.cycle.ALMCycleDetails;
 import com.cognizant.collector.alm.beans.defect.ALMDefectDetails;
 import com.cognizant.collector.alm.beans.domain.ALMDomainDetails;
@@ -41,7 +42,7 @@ import java.util.Map;
  * @author Cognizant
  */
 
-public interface   {
+public interface AlmClient  {
 
     /*SignIn and SignOut*/
     @GetMapping("/api/authentication/sign-in")
@@ -103,6 +104,13 @@ public interface   {
                             @PathVariable("domainName") String domainName,
                             @PathVariable("projectName") String projectName,
                             @RequestParam Map<String, String> requestParams);
+
+    /*Audits*/
+    @GetMapping(value = "/rest/domains/{domainName}/projects/{projectName}/audits", produces = MediaType.APPLICATION_JSON_VALUE)
+    ALMDeleteDetails getDeleteComponents(@RequestHeader("Cookie") String strCookie,
+                                         @PathVariable("domainName") String domainName,
+                                         @PathVariable("projectName") String projectName,
+                                         @RequestParam String query);
 
 
 }

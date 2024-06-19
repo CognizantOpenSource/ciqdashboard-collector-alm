@@ -40,6 +40,7 @@ public class AlmProjectComponent {
     AlmTestRunComponent testRunComponent;
     AlmTestComponent testComponent;
 
+    AlmDeleteComponent deleteComponent;
 
     public void getALMDetailsByProject(Domain domain, Project project){
         releaseComponent.getReleaseDetails(domain.getName(), project.getName());
@@ -48,5 +49,7 @@ public class AlmProjectComponent {
         defectComponent.getDefectDetails(domain.getName(), project.getName());
         testRunComponent.getTestRunDetails(domain.getName(), project.getName());
         testComponent.getTestDetails(domain.getName(), project.getName());
+
+        deleteComponent.removeDeletedDetails(domain.getName(), project.getName());
     }
 }

@@ -59,4 +59,8 @@ public class RequirementService {
         Optional<Requirement> optional = repository.findFirstByDomainNameAndProjectNameOrderByLastModifiedDesc(domainName, projectName);
         return optional.isPresent() ? optional.get().getLastModified() : null;
     }
+
+    public long deleteByDomainNameAndProjectNameAndRequirementId(String domainName, String projectName, String requirementId) {
+        return repository.deleteByDomainNameAndProjectNameAndRequirementId(domainName, projectName, requirementId);
+    }
 }

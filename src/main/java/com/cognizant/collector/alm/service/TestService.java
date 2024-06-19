@@ -47,6 +47,10 @@ public class TestService {
         return repository.findByProjectNameAndTestId(projectName, testId);
     }
 
+    public long deleteByDomainNameAndProjectNameAndTestId(String domainName, String projectName, String testId) {
+        return repository.deleteByDomainNameAndProjectNameAndTestId(domainName, projectName, testId);
+    }
+
     public Test add(Test test){
         return repository.save(test);
     }

@@ -32,7 +32,7 @@ import java.util.Date;
  */
 
 @Data
-@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmCycleCollectionName()}")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmCollectionName()}")
 @CompoundIndex(name = "proj_cyc_index",
         def = "{'projectName': 1, 'cycleId': 1}",
         unique = true)
@@ -41,6 +41,7 @@ public class Cycle {
     private String id;
     private String cycleId;
     private String cycleName;
+    private String assetType = "Cycle";
     private String description;
     private String domainName;
     private String projectName;

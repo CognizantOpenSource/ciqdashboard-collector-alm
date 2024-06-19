@@ -31,5 +31,8 @@ import java.util.Optional;
 public interface TestRepository extends MongoRepository<Test, String> {
     Optional<Test> findByProjectNameAndTestId(String projectName, String testId);
 
+    long deleteByDomainNameAndProjectNameAndTestId(String domainName, String projectName, String testId);
+
+
     Optional<Test> findFirstByDomainNameAndProjectNameOrderByLastModifiedDesc(String domainName, String projectName);
 }

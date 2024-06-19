@@ -30,6 +30,6 @@ import java.util.Optional;
 
 public interface RequirementRepository extends MongoRepository<Requirement, String> {
     Optional<Requirement> findByProjectNameAndRequirementId(String projectName, String requirementId);
-
+    long deleteByDomainNameAndProjectNameAndRequirementId(String domainName, String projectName, String requirementId);
     Optional<Requirement> findFirstByDomainNameAndProjectNameOrderByLastModifiedDesc(String domainName, String projectName);
 }

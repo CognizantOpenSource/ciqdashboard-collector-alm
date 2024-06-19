@@ -59,4 +59,8 @@ public class DefectService {
         Optional<Defect> optional = repository.findFirstByDomainNameAndProjectNameOrderByLastModifiedDesc(domainName, projectName);
         return optional.isPresent() ? optional.get().getLastModified() : null;
     }
+
+    public long deleteByDomainNameAndProjectNameAndDefectId(String domainName, String projectName, String defectId) {
+        return repository.deleteByDomainNameAndProjectNameAndDefectId(domainName, projectName, defectId);
+    }
 }

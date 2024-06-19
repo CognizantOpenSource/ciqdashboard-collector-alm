@@ -31,7 +31,7 @@ import java.util.Date;
  */
 
 @Data
-@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmDefectCollectionName()}")
+@Document(collection = "#{T(com.cognizant.collector.alm.component.CommonUtilComponent).getAlmCollectionName()}")
 @CompoundIndex(name = "proj_def_index",
         def = "{'projectName': 1, 'defectId': 1}",
         unique = true)
@@ -40,6 +40,7 @@ public class Defect {
     private String id;
     private String defectId;
     private String defectName;
+    private String assetType = "Defect";
     private String domainName;
     private String projectName;
     private String description;
